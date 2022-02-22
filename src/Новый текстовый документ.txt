@@ -1,0 +1,127 @@
+гк@PC11-CAB3 MINGW64 ~
+$ cd D:\гк\new
+bash: cd: D:гкnew: No such file or directory
+
+гк@PC11-CAB3 MINGW64 ~
+$ cd "D:\гк\new"
+
+гк@PC11-CAB3 MINGW64 /d/гк/new
+$ pwd
+/d/гк/new
+
+гк@PC11-CAB3 MINGW64 /d/гк/new
+$ git init
+Initialized empty Git repository in D:/гк/new/.git/
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git add src
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git commit -m "GithubSwing"
+[master (root-commit) c8fbe1c] GithubSwing
+ 1 file changed, 131 insertions(+)
+ create mode 100644 src/RunAll2.java
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git config --global user.name
+bitebs
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote set-url master https://github.com/bitebs/RunAll22.02.git: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
+error: No such remote 'master'
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote set-url master https://RunAll22.02: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@github.com/bitebs/RunAll22.02.git
+error: No such remote 'master'
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote add origin https://github.com/bitebs/RunAll22.02.git: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
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote -v
+origin  https://github.com/bitebs/RunAll22.02.git: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 (fetch)
+origin  https://github.com/bitebs/RunAll22.02.git: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 (push)
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push -u
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push --set-upstream origin master
+fatal: unable to access 'https://github.com/bitebs/RunAll22.02.git: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/': The requested URL returned error: 400
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git config credential.helper
+manager-core
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push --set-upstream origin master
+fatal: unable to access 'https://github.com/bitebs/RunAll22.02.git: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/': The requested URL returned error: 400
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote set-url origin https://bitebs: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@github.com/bitebs/RunAll22.02.git
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push --set-upstream origin master
+remote: Permission to bitebs/RunAll22.02.git denied to KirillovItstep.
+fatal: unable to access 'https://github.com/bitebs/RunAll22.02.git/': The requested URL returned error: 403
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git remote set-url origin https://bitebs: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@github.com/bitebs/RunAll22.02.git
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push --set-upstream origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 1.20 KiB | 1.20 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bitebs/RunAll22.02.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git commit -a -m "v.2"
+[master b6370f7] v.2
+ 1 file changed, 1 insertion(+)
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 317 bytes | 317.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/bitebs/RunAll22.02.git
+   c8fbe1c..b6370f7  master -> master
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git add src
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git commit -a -m "v.2"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .idea/
+        NewProject.iml
+        out/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$ git push -u origin
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+гк@PC11-CAB3 MINGW64 /d/гк/new (master)
+$
