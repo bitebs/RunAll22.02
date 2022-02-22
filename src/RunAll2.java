@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RunAll2 {
+	//num = 1;
     public static void main(String[] args) {
         JFrame frame = new JFrame();
 
