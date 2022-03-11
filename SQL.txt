@@ -1,0 +1,86 @@
+﻿.help
+
+//Создать (или открыть) базу данных
+.open database.db
+
+Сохранить, если до этого название базы данных не задавалось
+.save ex1.db
+
+//Список подключенных баз данных
+.databases
+
+.quit
+.exit
+
+.tables
+
+drop table dht;
+
+Схема таблицы
+.schema dht
+
+CREATE TABLE urls (url STRING);
+INSERT INTO urls VALUES
+    ('https://packages.debian.org/stretch/sqlite3'),
+    ('https://docs.python.org/3/library/sqlite3.html'),
+    ('https://sqlite.org/about.html');
+	
+SELECT COUNT(*) FROM urls;
+	
+attach 'northwind.db' as north;
+
+.mode column
+
+.mode markdown
+
+.mode box
+
+Из sql файла
+.read myscript.sql
+
+Hello, world! Table
+create table hello(message varchar(10), count smallint);
+insert into hello values('hello!',10);
+insert into hello values('bye!',20);
+select * from hello;
+
+Вывод результатов запроса в файл
+.mode list
+.separator |
+.output test_file_1.txt
+select * from hello;
+.exit
+
+Записать изображение в базу данныхы
+CREATE TABLE images(name TEXT, type TEXT, img BLOB);
+INSERT INTO images(name,type,img)
+VALUES('icon','jpeg',readfile('icon.jpg'));
+
+Прочитать изображение из базы данных
+SELECT writefile('icon.jpg',img) FROM images WHERE name='icon';
+
+Дамп в файл
+.output d:/sqlite/example.sql
+.dump
+.exit
+
+Только одну таблицу
+.output c:/sqlite/albums.sql
+.dump albums
+.quit
+
+Только схему
+.output c:/sqlite/chinook_structure.sql
+.schema
+.quit
+
+CREATE TABLE comments (
+    post_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    website_url TEXT NULL,
+    comment TEXT NOT NULL );
+
+INSERT INTO comments ( name, email, website_url, comment )
+VALUES ( 'Shivam Mamgain', 'xyz@gmail.com',
+'shivammg.blogspot.com', 'Great tutorial for beginners.' );
